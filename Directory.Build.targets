@@ -3,7 +3,7 @@
   <Import Project="$(SolutionDir)SharedConfig.targets"/>
 
   <!-- UnityEngine libraries to include -->
-  <ItemGroup Condition="'$(UnityModLibrary)' == 'true' or '$(TestLibrary)' == 'true'">
+  <ItemGroup Condition="('$(UnityModLibrary)' == 'true' or '$(TestLibrary)' == 'true') and '$(IsDependency)' == 'false'">
     <Reference Include="$(SubnauticaManaged)\UnityEngine*.dll">
       <Private>$(TestLibrary)</Private>
     </Reference>
